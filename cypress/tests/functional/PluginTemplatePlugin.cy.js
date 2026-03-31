@@ -11,7 +11,8 @@ describe('Plugin template plugin tests', function() {
 	it('Sets up the testing environment', function() {
 		cy.login('admin', 'admin', 'publicknowledge');
 
-		cy.get('.app__nav a').contains('Website').click();
+		cy.get('nav').contains('Settings').click();
+		cy.get('nav').contains('Website').click({force: true});
 		cy.get('button[id="plugins-button"]').click();
 
 		// Find and enable the plugin
@@ -21,7 +22,8 @@ describe('Plugin template plugin tests', function() {
 	it('Configures the plugin', function() {
 		cy.login('admin', 'admin', 'publicknowledge');
 
-		cy.get('.app__nav a').contains('Website').click();
+		cy.get('nav').contains('Settings').click();
+		cy.get('nav').contains('Website').click({force: true});
 		cy.get('button[id="plugins-button"]').click();
 
 		cy.get('a[id^="component-grid-settings-plugins-settingsplugingrid-category-generic-row-plugintemplateplugin-settings-button-"]', {timeout: 20_000}).as('settings');
