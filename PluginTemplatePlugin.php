@@ -116,7 +116,3 @@ class PluginTemplatePlugin extends GenericPlugin
     }
 }
 
-// For backwards compatibility -- expect this to be removed approx. OJS/OMP/OPS 3.6
-if (!PKP_STRICT_MODE) {
-    class_alias('\APP\plugins\generic\pluginTemplate\PluginTemplatePlugin', '\PluginTemplatePlugin');
-}
